@@ -9,6 +9,9 @@ import (
 
 func main() {
 	fmt.Println("The beginning of logbook.")
+	commits := git.GetCommits()
+	for _, value := range commits {
+		fmt.Printf("Author: %s\nSubject: %s\n\n", value.Author, value.Subject)
+	}
 	changelog.WriteChangelog()
-	git.GetCommits()
 }
