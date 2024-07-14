@@ -2,6 +2,12 @@
 
 ## Commits
 
+- 🔧 **refactor(changelog): Moved the default template to a local string** 
+  - 📅 **Hash**: 261d2a3bff10e81e72476892980b2bbc2114a488
+  - 👤 **Author**: Lukas Heberling (62028575+N3moAhead@users.noreply.github.com)
+  - ✍️ **Commiter**: Lukas Heberling (62028575+N3moAhead@users.noreply.github.com)
+  - 📝 **Details**: 
+    
 - 🔧 **feat(changelog): Added templating** 
   - 📅 **Hash**: 1cd501cedbe849032229ea96016fd33f930c7420
   - 👤 **Author**: Lukas Heberling (62028575+N3moAhead@users.noreply.github.com)

@@ -7,5 +7,6 @@ import (
 
 func main() {
 	commits := git.GetCommits()
-	changelog.WriteChangelog(commits)
+	config := changelog.ReadConfig()
+	changelog.WriteChangelog(commits, config)
 }
