@@ -1,5 +1,5 @@
 build:
-	go build ./cmd/logbook/main.go
+	go build -o lbk ./cmd/logbook/main.go
 
 run:
 	go run ./cmd/logbook/main.go
