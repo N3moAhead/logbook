@@ -2,6 +2,12 @@
 
 ## Commits
 
+- 🔧 **feat(changelog): Added templating** 
+  - 📅 **Hash**: 1cd501cedbe849032229ea96016fd33f930c7420
+  - 👤 **Author**: Lukas Heberling (62028575+N3moAhead@users.noreply.github.com)
+  - ✍️ **Commiter**: Lukas Heberling (62028575+N3moAhead@users.noreply.github.com)
+  - 📝 **Details**: 
+    
 - 🔧 **feat(changelog): print basic changelog** 
   - 📅 **Hash**: 983d7990ac5d7c0d5506ff8fb328243abc685e56
   - 👤 **Author**: Lukas Heberling (62028575+N3moAhead@users.noreply.github.com)

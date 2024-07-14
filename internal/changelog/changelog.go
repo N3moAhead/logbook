@@ -2,15 +2,25 @@ package changelog
 
 import (
 	"os"
-	"path/filepath"
 	"text/template"
 
 	"github.com/N3moAhead/logbook/internal/git"
 )
 
+const DefaultTemplate string = `# Changelog
+
+## Commits
+{{ range . }}
+- 🔧 **{{ .Subject }}** 
+  - 📅 **Hash**: {{ .Hash }}
+  - 👤 **Author**: {{ .Author }} ({{ .AuthorEmail }})
+  - ✍️ **Commiter**: {{ .Commiter }} ({{ .CommiterEmail }})
+  - 📝 **Details**: 
+    {{ .Body }}{{ end }}
+`
+
 func WriteChangelog(commits []git.Commit) {
-	var templatePath = filepath.Join("templates", "changelog.tmpl")
-	tmpl, err := template.ParseFiles(templatePath)
+	tmpl, err := template.New("Changelog").Parse(DefaultTemplate)
 	if err != nil {
 		panic(err)
 	}
