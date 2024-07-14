@@ -1,0 +1,10 @@
+# Changelog
+
+## Commits
+{{ range . }}
+- 🔧 **{{ .Subject }}** 
+  - 📅 **Hash**: {{ .Hash }}
+  - 👤 **Author**: {{ .Author }} ({{ .AuthorEmail }})
+  - ✍️ **Commiter**: {{ .Commiter }} ({{ .CommiterEmail }})
+  - 📝 **Details**: 
+    {{ .Body }}{{ end }}

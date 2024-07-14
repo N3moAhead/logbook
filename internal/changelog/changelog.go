@@ -1,26 +1,28 @@
 package changelog
 
 import (
-	"fmt"
 	"os"
+	"path/filepath"
+	"text/template"
 
 	"github.com/N3moAhead/logbook/internal/git"
 )
 
 func WriteChangelog(commits []git.Commit) {
-	f, err := os.Create("CHANGELOG.md")
+	var templatePath = filepath.Join("templates", "changelog.tmpl")
+	tmpl, err := template.ParseFiles(templatePath)
 	if err != nil {
-		fmt.Println("Error while trying to create a file: ", err)
-		os.Exit(1)
+		panic(err)
 	}
-	defer f.Close()
 
-	f.WriteString("# Changelog\n\n")
-	for _, commit := range commits {
-		_, err := f.WriteString("- " + commit.Subject + "\n")
-		if err != nil {
-			fmt.Println("Error while trying to write to the ouput file: ", err)
-			os.Exit(1)
-		}
+	changelogFile, err := os.Create("CHANGELOG.md")
+	if err != nil {
+		panic(err)
+	}
+	defer changelogFile.Close()
+
+	err = tmpl.Execute(changelogFile, commits)
+	if err != nil {
+		panic(err)
 	}
 }
